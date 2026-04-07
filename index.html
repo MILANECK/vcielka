@@ -114,7 +114,7 @@ button{outline:none;border:none;}
   display:flex;
   align-items:center;
   overflow:hidden;
-  padding:0 32px;
+  padding:0;
 }
 /* fullscreen background image */
 .hero-bg-img{
@@ -149,7 +149,7 @@ button{outline:none;border:none;}
   position:relative;
   z-index:2;
   max-width:640px;
-  padding:60px 32px 180px 0;margin-left:-16px;
+  padding:60px 32px 180px 8px;
   text-align:left;
 }
 .hero-badge{display:inline-block;background:var(--yellow);color:#1a1a1a;font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;padding:5px 16px;border-radius:50px;margin-bottom:18px;letter-spacing:.6px;text-transform:uppercase;}
@@ -580,7 +580,7 @@ button{outline:none;border:none;}
   <a href="#aktuality" class="menu-link">Aktuality</a>
   <a href="#cennik" class="menu-link">Cenník</a>
   <a href="https://www.skolka-vcielka.sk/user" class="menu-link" target="_blank">🔐 Virtuálna škôlka</a>
-  <a href="#kontakt" class="nav-cta">Kontakt</a>
+  <a href="#kontakt" class="nav-cta menu-link">Kontakt</a>
 </div>
 
 <!-- ===========================
@@ -988,7 +988,10 @@ const menu=document.getElementById('mobileMenu');
 const menuClose=document.getElementById('menuClose');
 burger.addEventListener('click',()=>menu.classList.toggle('open'));
 menuClose.addEventListener('click',()=>menu.classList.remove('open'));
-document.querySelectorAll('.menu-link').forEach(l=>l.addEventListener('click',()=>menu.classList.remove('open')));
+document.querySelectorAll('.menu-link, .nav-mobile a').forEach(l=>l.addEventListener('click',()=>{
+  menu.classList.remove('open');
+  document.body.style.overflow='';
+}));
 
 // ===== SCROLL FADE IN =====
 const obs=new IntersectionObserver((entries)=>{
@@ -1023,6 +1026,7 @@ function scrollToNews(e){
   e.preventDefault();
   const el = document.getElementById('aktuality');
   if(el) el.scrollIntoView({behavior:'smooth'});
+  return false;
 }
 
 // ===== LIGHTBOX =====
@@ -1234,13 +1238,24 @@ document.addEventListener('DOMContentLoaded', loadCMS);
 // ===== ENSURE POPUPS EXIST IN DOM =====
 (function(){
   if(!document.getElementById('newsPopupOverlay')){
-    document.body.insertAdjacentHTML('beforeend','<div class="news-popup-overlay" id="newsPopupOverlay" onclick="if(event.target===this)closeNewsPopup()"><div class="news-popup" id="newsPopup"><div class="news-popup-header" id="popupHeader"><button class="news-popup-close" onclick="closeNewsPopup()">✕</button><div class="news-popup-header-placeholder" id="popupHeaderPlaceholder">📰</div></div><div class="news-popup-body"><div class="news-popup-date" id="popupDate"></div><div class="news-popup-title" id="popupTitle"></div><div class="news-popup-content" id="popupContent"></div></div></div></div>');
+    const d=document.createElement('div');
+    d.className='news-popup-overlay';d.id='newsPopupOverlay';
+    d.onclick=function(e){if(e.target===d)closeNewsPopup();};
+    const p=document.createElement('div');p.className='news-popup';p.id='newsPopup';
+    d.appendChild(p);document.body.appendChild(d);
   }
   if(!document.getElementById('galleryPopupOverlay')){
-    document.body.insertAdjacentHTML('beforeend','<div class="gallery-popup-overlay" id="galleryPopupOverlay"><div class="gallery-popup-header"><h2>🖼️ Galéria škôlky</h2><button class="gallery-popup-close" onclick="closeFullGallery()">✕</button></div><div class="gallery-popup-grid" id="galleryPopupGrid"></div></div>');
+    const d=document.createElement('div');
+    d.className='gallery-popup-overlay';d.id='galleryPopupOverlay';
+    d.innerHTML='<div class="gallery-popup-header"><h2>🖼️ Galéria škôlky</h2><button class="gallery-popup-close" onclick="closeFullGallery()">✕</button></div><div class="gallery-popup-grid" id="galleryPopupGrid"></div>';
+    document.body.appendChild(d);
   }
   if(!document.getElementById('lightbox')){
-    document.body.insertAdjacentHTML('beforeend','<div class="lightbox" id="lightbox"><button class="lightbox-close" id="lbClose">✕</button><button class="lightbox-prev" id="lbPrev">❮</button><img id="lbImg" src="" alt=""/><button class="lightbox-next" id="lbNext">❯</button></div>');
+    const d=document.createElement('div');
+    d.className='lightbox';d.id='lightbox';
+    d.onclick=function(e){if(e.target===d)closeLightbox();};
+    d.innerHTML='<button class="lightbox-close" id="lbClose" onclick="closeLightbox()">✕</button><button class="lightbox-prev" id="lbPrev" onclick="lbGo(-1)">❮</button><img id="lbImg" src="" alt=""/><button class="lightbox-next" id="lbNext" onclick="lbGo(1)">❯</button>';
+    document.body.appendChild(d);
   }
 })();
 
@@ -1250,6 +1265,7 @@ function scrollToNews(e){
   e.preventDefault();
   const el = document.getElementById('aktuality');
   if(el) el.scrollIntoView({behavior:'smooth'});
+  return false;
 }
 
 // ===== LIGHTBOX =====
