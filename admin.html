@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Správca webu – Školka Včielka</title>
+<title>Správca webu – Materská škola Včielka</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link rel="icon" type="image/png" href="vcielka_logo2.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -27,9 +28,9 @@ body{font-family:'Inter',sans-serif;background:#F0F7FF;color:#1a1a1a;min-height:
 /* LAYOUT */
 .app{display:none;min-height:100vh;}
 .sidebar{position:fixed;top:0;left:0;width:240px;height:100vh;background:#1A5FA8;padding:24px 16px;overflow-y:auto;z-index:10;}
-.sidebar-logo{display:flex;align-items:center;gap:10px;padding:8px 12px;margin-bottom:24px;}
+.sidebar-logo{display:flex;align-items:center;gap:10px;padding:8px 12px;margin-bottom:24px;flex-wrap:nowrap;}
 .sidebar-logo img{height:38px;filter:brightness(0) invert(1);}
-.sidebar-logo span{font-family:'Quicksand',sans-serif;font-size:15px;font-weight:700;color:#fff;}
+.sidebar-logo span{font-family:'Quicksand',sans-serif;font-size:13px;font-weight:700;color:#fff;line-height:1.3;}
 .nav-item{display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:12px;cursor:pointer;color:rgba(255,255,255,.75);font-family:'Quicksand',sans-serif;font-size:13px;font-weight:600;margin-bottom:4px;transition:.2s;}
 .nav-item:hover{background:rgba(255,255,255,.12);color:#fff;}
 .nav-item.active{background:#F9C832;color:#1a1a1a;}
@@ -118,9 +119,9 @@ body{font-family:'Inter',sans-serif;background:#F0F7FF;color:#1a1a1a;min-height:
 <div class="login-wrap" id="loginWrap">
   <div class="login-box">
     <div class="login-logo">
-      <img src="VCIELKA_LOGO.png" alt="Včielka" onerror="this.style.display='none'"/>
+      <img src="vcielka_logo2.png" alt="Včielka" style="height:80px;width:auto;margin:0 auto 8px;display:block;"/>
       <h1>Správca webu</h1>
-      <p>Školka Včielka · Admin panel</p>
+      <p>Materská škola Včielka · Admin panel</p>
     </div>
     <label>Heslo</label>
     <input type="password" id="passwordInput" placeholder="Zadajte heslo..." onkeydown="if(event.key==='Enter')doLogin()"/>
@@ -135,8 +136,8 @@ body{font-family:'Inter',sans-serif;background:#F0F7FF;color:#1a1a1a;min-height:
   <!-- SIDEBAR -->
   <div class="sidebar">
     <div class="sidebar-logo">
-      <img src="VCIELKA_LOGO.png" alt=""/>
-      <span>Včielka Admin</span>
+      <img src="vcielka_logo2.png" alt="Včielka" style="height:36px;width:auto;"/>
+      <span>Materská škola Včielka</span>
     </div>
     <div class="nav-item active" onclick="showPage('hero')" id="nav-hero">
       <span class="icon">🏠</span> Hero sekcia
@@ -304,7 +305,7 @@ body{font-family:'Inter',sans-serif;background:#F0F7FF;color:#1a1a1a;min-height:
       </div>
       <div class="card">
         <div class="card-title">©️ Copyright text</div>
-        <div class="field"><label>Text (ľavý)</label><input type="text" id="footer_copy_left" placeholder="© 2025 Školka Včielka · Všetky práva vyhradené"/></div>
+        <div class="field"><label>Text (ľavý)</label><input type="text" id="footer_copy_left" placeholder="© 2025 Materská škola Včielka · Všetky práva vyhradené"/></div>
         <div class="field"><label>Text (pravý)</label><input type="text" id="footer_copy_right" placeholder="Vytvorené s 🐝 láskou v Bratislave"/></div>
         <button class="btn-save" onclick="saveSettings(['footer_copy_left','footer_copy_right'])">💾 Uložiť</button>
       </div>

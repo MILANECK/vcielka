@@ -2,15 +2,13 @@
 <html lang="sk">
 <head>
 <meta charset="UTF-8"/>
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-<meta http-equiv="Pragma" content="no-cache"/>
-<meta http-equiv="Expires" content="0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Školka Včielka | Súkromná materská škola Bratislava Ružinov</title>
 <meta name="description" content="Súkromná materská škola Včielka v Bratislave Ružinov. Program Zvedavá Včielka pre deti od 2,5 do 6 rokov. Angličtina, logopédia, šport a oveľa viac."/>
 <meta property="og:title" content="Školka Včielka | Bratislava Ružinov"/>
 <meta property="og:description" content="Láskyplná súkromná materská škola pre deti od 2,5 do 6 rokov. Program Zvedavá Včielka."/>
 <meta property="og:type" content="website"/>
+<link rel="icon" type="image/png" href="vcielka_logo2.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&family=Quicksand:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
@@ -18,7 +16,7 @@
 /* ===== RESET & BASE ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;background:#D9EFFF;color:#1a1a1a;overflow-x:hidden;}
+body{font-family:'Inter',sans-serif;background:#D9EFFF;color:#1a1a1a;overflow-x:hidden;font-size:16px;}
 img{max-width:100%;display:block;}
 a{text-decoration:none;color:inherit;}
 
@@ -54,7 +52,6 @@ h3,.h3{font-family:'Quicksand',sans-serif;font-weight:700;}
 button{outline:none;border:none;}
 *:focus{outline:none;}
 
-.hero-content{position:relative;z-index:2;max-width:600px;padding:60px 32px 180px 32px;text-align:left;}
 /* ===== WAVES ===== */
 .wave{line-height:0;display:block;overflow:hidden;margin-bottom:-1px;}
 .wave svg{width:100%;display:block;}
@@ -65,7 +62,7 @@ button{outline:none;border:none;}
 .section-inner{max-width:1100px;margin:0 auto;width:100%;position:relative;z-index:2;}
 .section-center .label{color:#5590C4;display:block;margin-bottom:6px;}
 .section-center h2{font-size:clamp(28px,5vw,38px);color:var(--text);margin-bottom:10px;}
-.section-center .desc{font-family:'Inter',sans-serif;font-size:14px;color:var(--text-mid);line-height:1.72;max-width:500px;margin:0 auto;}
+.section-center .desc{font-family:'Inter',sans-serif;font-size:16px;color:var(--text-mid);line-height:1.72;max-width:500px;margin:0 auto;}
 
 /* ===== LEAF DECORATIONS ===== */
 .leaf{position:absolute;pointer-events:none;opacity:.14;}
@@ -93,7 +90,7 @@ button{outline:none;border:none;}
 .nav-logo-text{display:none;}
 .nav-logo-sub{display:none;}
 .nav-links{display:flex;align-items:center;gap:2px;}
-.nav-links a{font-family:'Quicksand',sans-serif;font-size:12.5px;font-weight:600;color:#1a1a1a;padding:6px 10px;border-radius:20px;transition:background .2s;}
+.nav-links a{font-family:'Quicksand',sans-serif;font-size:13.5px;font-weight:600;color:#1a1a1a;padding:6px 10px;border-radius:20px;transition:background .2s;}
 .nav-links a:hover{background:rgba(0,0,0,.1);color:#1a1a1a;}
 .nav-vs{background:rgba(255,255,255,.55);color:#1A5FA8;font-family:'Quicksand',sans-serif;font-size:12px;font-weight:700;padding:7px 14px;border-radius:50px;margin-left:6px;transition:background .2s;}
 .nav-vs:hover{background:rgba(255,255,255,.75);}
@@ -149,11 +146,18 @@ button{outline:none;border:none;}
   pointer-events:none;
 }
 .hero-wave svg{width:100%;display:block;}
-
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:520px;
+  padding:60px 0 180px 0;
+  text-align:left;
+  margin-left:0;
+}
 .hero-badge{display:inline-block;background:var(--yellow);color:#1a1a1a;font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;padding:5px 16px;border-radius:50px;margin-bottom:18px;letter-spacing:.6px;text-transform:uppercase;}
 .hero h1{font-size:clamp(36px,6vw,58px);color:#fff;line-height:1.08;margin-bottom:18px;text-shadow:0 2px 16px rgba(0,0,0,.22);}
 .hero h1 em{color:#F9C832;font-style:normal;}
-.hero-desc{font-family:'Inter',sans-serif;font-size:16px;color:rgba(255,255,255,.92);line-height:1.75;margin-bottom:30px;text-shadow:0 1px 8px rgba(0,0,0,.2);}
+.hero-desc{font-family:'Inter',sans-serif;font-size:18px;color:rgba(255,255,255,.92);line-height:1.75;margin-bottom:30px;text-shadow:0 1px 8px rgba(0,0,0,.2);}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-start;}
 .btn-primary{background:var(--yellow);color:#1a1a1a;padding:13px 28px;font-size:14px;box-shadow:none;transition:box-shadow .3s,transform .2s;}
 .btn-primary:hover{box-shadow:0 6px 28px rgba(249,200,50,.8);transform:translateY(-2px);}
@@ -205,8 +209,8 @@ button{outline:none;border:none;}
 .service-card.yellow .service-img{background:var(--yellow-bright);}
 .service-card.green .service-img{background:var(--green-bright);}
 .service-body{flex:1;padding:11px 14px 14px;}
-.service-body h3{font-size:14px;color:#1a1a1a;margin-bottom:3px;}
-.service-body p{font-family:'Inter',sans-serif;font-size:13px;color:var(--text-muted);line-height:1.45;}
+.service-body h3{font-size:15px;color:#1a1a1a;margin-bottom:3px;}
+.service-body p{font-family:'Inter',sans-serif;font-size:14px;color:var(--text-muted);line-height:1.45;}
 
 /* ===========================
    WHY US
@@ -215,8 +219,8 @@ button{outline:none;border:none;}
 .why-item{display:flex;gap:13px;align-items:flex-start;background:rgba(255,255,255,.6);border-radius:20px;padding:16px;transition:transform .2s;}
 .why-item:hover{transform:translateY(-3px);}
 .why-icon{width:44px;height:44px;border-radius:14px;background:var(--yellow-card);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
-.why-item h3{font-size:14px;color:#1a1a1a;margin-bottom:3px;}
-.why-item p{font-family:'Inter',sans-serif;font-size:13px;color:#666;line-height:1.5;}
+.why-item h3{font-size:15px;color:#1a1a1a;margin-bottom:3px;}
+.why-item p{font-family:'Inter',sans-serif;font-size:14px;color:#666;line-height:1.5;}
 
 /* ===========================
    SCHEDULE + ZVEDAVA
@@ -230,8 +234,8 @@ button{outline:none;border:none;}
 .tl-dot.blue{background:var(--blue-light);}
 .tl-dot.yellow{background:var(--yellow);}
 .tl-time{font-family:'Quicksand',sans-serif;font-size:12px;font-weight:700;color:#5590C4;margin-bottom:1px;}
-.tl-name{font-family:'Quicksand',sans-serif;font-size:14px;font-weight:700;color:#1a1a1a;}
-.tl-desc{font-family:'Inter',sans-serif;font-size:13px;color:var(--text-muted);}
+.tl-name{font-family:'Quicksand',sans-serif;font-size:15px;font-weight:700;color:#1a1a1a;}
+.tl-desc{font-family:'Inter',sans-serif;font-size:14px;color:var(--text-muted);}
 .z-item{background:rgba(255,255,255,.6);border-radius:18px;padding:14px 16px;display:flex;gap:12px;align-items:center;margin-bottom:10px;}
 .z-item:last-child{margin-bottom:0;}
 .z-item-title{font-family:'Quicksand',sans-serif;font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:2px;}
@@ -263,7 +267,7 @@ button{outline:none;border:none;}
 .testi-card{background:rgba(255,255,255,.72);border-radius:22px;padding:20px;transition:transform .2s;}
 .testi-card:hover{transform:translateY(-3px);}
 .testi-stars{color:var(--yellow);font-size:14px;margin-bottom:8px;}
-.testi-text{font-family:'Inter',sans-serif;font-size:14px;color:#444;line-height:1.68;margin-bottom:12px;font-style:italic;}
+.testi-text{font-family:'Inter',sans-serif;font-size:15px;color:#444;line-height:1.68;margin-bottom:12px;font-style:italic;}
 .testi-name{font-family:'Quicksand',sans-serif;font-size:14px;font-weight:700;color:#1a1a1a;}
 
 /* ===========================
@@ -284,8 +288,8 @@ button{outline:none;border:none;}
 .news-img img{width:100%;height:100%;object-fit:cover;}
 .news-body{padding:15px 17px 18px;}
 .news-date{font-family:'Inter',sans-serif;font-size:12px;color:var(--text-muted);margin-bottom:5px;font-weight:500;}
-.news-title{font-family:'Quicksand',sans-serif;font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:6px;line-height:1.3;}
-.news-excerpt{font-family:'Inter',sans-serif;font-size:13px;color:#666;line-height:1.55;}
+.news-title{font-family:'Quicksand',sans-serif;font-size:17px;font-weight:700;color:#1a1a1a;margin-bottom:6px;line-height:1.3;}
+.news-excerpt{font-family:'Inter',sans-serif;font-size:15px;color:#666;line-height:1.55;}
 .news-more{display:inline-block;margin-top:9px;font-family:'Quicksand',sans-serif;font-size:12px;font-weight:700;color:var(--blue-light);}
 .news-card.yellow .news-more{color:#C49000;}
 .news-card.green .news-more{color:#1A6640;}
@@ -323,7 +327,7 @@ button{outline:none;border:none;}
 .contact-card.sky .contact-icon{background:#A8D4F5;}
 .contact-body{padding:10px 14px;}
 .contact-label{font-family:'Quicksand',sans-serif;font-size:9px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px;}
-.contact-value{font-family:'Inter',sans-serif;font-size:13.5px;color:#1a1a1a;font-weight:500;line-height:1.4;}
+.contact-value{font-family:'Inter',sans-serif;font-size:15px;color:#1a1a1a;font-weight:500;line-height:1.4;}
 .contact-sub{font-family:'Inter',sans-serif;font-size:10px;color:#aaa;margin-top:1px;}
 .map-wrap{border-radius:22px;overflow:hidden;width:100%;height:260px;background:var(--blue-sky);}
 .map-wrap iframe{width:100%;height:100%;border:0;display:block;}
@@ -335,8 +339,8 @@ button{outline:none;border:none;}
 .footer-inner{max-width:1100px;margin:0 auto;}
 .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:32px;margin-bottom:32px;}
 .footer h4{font-family:'Quicksand',sans-serif;font-size:13px;font-weight:700;color:var(--yellow);margin-bottom:11px;}
-.footer-desc{font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:11px;}
-.footer-link{display:block;font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:6px;transition:color .2s;}
+.footer-desc{font-family:'Inter',sans-serif;font-size:14px;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:11px;}
+.footer-link{display:block;font-family:'Inter',sans-serif;font-size:14px;color:rgba(255,255,255,.5);margin-bottom:6px;transition:color .2s;}
 .footer-link:hover{color:rgba(255,255,255,.85);}
 .footer-vs{display:inline-block;background:rgba(249,200,50,.14);color:var(--yellow);font-family:'Quicksand',sans-serif;font-size:12px;font-weight:700;padding:7px 16px;border-radius:50px;margin-top:4px;transition:background .2s;}
 .footer-vs:hover{background:rgba(249,200,50,.24);}
@@ -360,7 +364,7 @@ button{outline:none;border:none;}
 @media(max-width:900px){
   .nav-links{display:none;}
   .nav-burger{display:flex;}
-  .hero{flex-direction:column;padding:0;text-align:left;}
+  .hero{flex-direction:column;padding:40px 20px 32px;text-align:left;}
   .hero-img{display:none;}
   .hero-btns{justify-content:flex-start;}
   .two-col{grid-template-columns:1fr;}
@@ -429,13 +433,14 @@ button{outline:none;border:none;}
 .news-popup-body{padding:28px 32px 36px;}
 .news-popup-date{font-family:'Inter',sans-serif;font-size:12px;color:#aaa;margin-bottom:8px;}
 .news-popup-title{font-family:'Quicksand',sans-serif;font-size:22px;font-weight:700;color:#1a1a1a;margin-bottom:16px;line-height:1.3;}
-.news-popup-content{font-family:'Inter',sans-serif;font-size:15px;color:#444;line-height:1.75;}
+.news-popup-excerpt{font-family:'Quicksand',sans-serif;font-size:15px;font-weight:600;color:#666;line-height:1.6;margin-bottom:16px;padding-bottom:16px;border-bottom:1.5px solid #EEF4FF;}
+.news-popup-content{font-family:'Inter',sans-serif;font-size:16px;color:#444;line-height:1.8;}
 
 /* ===== HERO NEWS BLOB ===== */
 .hero-news-blob{
   position:absolute;
   bottom:90px;
-  right:52px;
+  right:120px;
   z-index:4;
   display:flex;
   flex-direction:column;
@@ -450,8 +455,8 @@ button{outline:none;border:none;}
   100%{transform:translateY(-10px);}
 }
 .hero-blob-circle{
-  width:150px;
-  height:150px;
+  width:220px;
+  height:220px;
   border-radius:50%;
   overflow:hidden;
   background:rgba(255,255,255,.2);
@@ -467,21 +472,21 @@ button{outline:none;border:none;}
   display:none;
 }
 .hero-blob-text{
-  margin-top:10px;
+  margin-top:14px;
   text-align:center;
-  max-width:180px;
+  max-width:240px;
 }
 .hero-news-tag{font-family:'Quicksand',sans-serif;font-size:9px;font-weight:700;color:#F9C832;text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;display:block;}
-.hero-news-title{font-family:'Quicksand',sans-serif;font-size:12px;font-weight:700;color:#fff;line-height:1.35;text-shadow:0 1px 6px rgba(0,0,0,.5);display:block;}
+.hero-news-title{font-family:'Quicksand',sans-serif;font-size:17px;font-weight:700;color:#fff;line-height:1.4;text-shadow:0 1px 8px rgba(0,0,0,.6);display:block;}
 @media(max-width:900px){
   .hero-news-blob{bottom:80px;right:16px;}
-  .hero-blob-circle{width:120px;height:120px;}
+  .hero-blob-circle{width:180px;height:180px;}
   .hero-blob-text{max-width:150px;}
-  .hero-news-title{font-size:11px;}
+  .hero-news-title{font-size:14px;}
 }
 @media(max-width:600px){
   .hero-news-blob{bottom:75px;right:10px;}
-  .hero-blob-circle{width:100px;height:100px;}
+  .hero-blob-circle{width:140px;height:140px;}
   .hero-blob-text{max-width:130px;}
 }
 
@@ -534,10 +539,142 @@ button{outline:none;border:none;}
 .download-btn .dl-icon{font-size:18px;}
 
 
-/* POPUP OVERRIDES */
-#newsPopupOverlay.open { display:flex !important; position:fixed !important; inset:0 !important; z-index:99999 !important; }
-#galleryPopupOverlay.open { display:flex !important; position:fixed !important; inset:0 !important; z-index:99999 !important; }
-#lightbox.open { display:flex !important; position:fixed !important; inset:0 !important; z-index:99999 !important; }
+
+/* ===== ABOUT EXPANDABLE ===== */
+.about-teaser{
+  text-align:center;
+  margin:32px auto 0;
+  max-width:700px;
+}
+.about-expand-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-family:'Quicksand',sans-serif;
+  font-size:15px;
+  font-weight:700;
+  color:var(--blue);
+  background:rgba(255,255,255,.7);
+  border:none;
+  cursor:pointer;
+  padding:10px 24px;
+  border-radius:50px;
+  transition:.25s;
+  backdrop-filter:blur(6px);
+  box-shadow:0 2px 12px rgba(26,95,168,.1);
+}
+.about-expand-btn:hover{background:#fff;box-shadow:0 4px 20px rgba(26,95,168,.15);}
+.about-expand-btn .arrow{
+  display:inline-block;
+  font-size:18px;
+  transition:transform .35s;
+  line-height:1;
+}
+.about-expand-btn.open .arrow{transform:rotate(180deg);}
+.about-text{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .5s cubic-bezier(.4,0,.2,1), opacity .4s;
+  opacity:0;
+  text-align:left;
+}
+.about-text.open{
+  max-height:600px;
+  opacity:1;
+}
+.about-text-inner{
+  font-family:'Inter',sans-serif;
+  font-size:15px;
+  color:#444;
+  line-height:1.8;
+  background:rgba(255,255,255,.75);
+  border-radius:20px;
+  padding:28px 32px;
+  margin-top:16px;
+  box-shadow:0 2px 16px rgba(26,95,168,.07);
+  backdrop-filter:blur(6px);
+}
+.about-text-inner p{margin-bottom:12px;}
+.about-text-inner p:last-child{margin-bottom:0;}
+
+/* ===== CLOUDS ===== */
+.cloud-deco{position:absolute;pointer-events:none;opacity:0.4;z-index:0;}
+@keyframes cloudDrift1{0%{transform:translateX(0) translateY(0);}33%{transform:translateX(20px) translateY(-8px);}66%{transform:translateX(8px) translateY(5px);}100%{transform:translateX(0) translateY(0);}}
+@keyframes cloudDrift6{0%{transform:translateX(0) translateY(0);}40%{transform:translateX(-15px) translateY(10px);}70%{transform:translateX(25px) translateY(-5px);}100%{transform:translateX(0) translateY(0);}}
+@keyframes cloudDrift7{0%{transform:translateX(0) translateY(0) scale(1);}50%{transform:translateX(12px) translateY(-12px) scale(1.04);}100%{transform:translateX(0) translateY(0) scale(1);}}
+@keyframes cloudDrift8{0%{transform:translateX(0);}30%{transform:translateX(-20px);}70%{transform:translateX(10px);}100%{transform:translateX(0);}}
+@keyframes cloudDrift2{0%{transform:translateX(0);}50%{transform:translateX(-22px);}100%{transform:translateX(0);}}
+@keyframes cloudDrift3{0%{transform:translateX(0);}50%{transform:translateX(14px);}100%{transform:translateX(0);}}
+.cloud-1{animation:cloudDrift1 12s ease-in-out infinite;}
+.cloud-2{animation:cloudDrift2 16s ease-in-out infinite;}
+.cloud-3{animation:cloudDrift3 10s ease-in-out infinite;}
+.cloud-4{animation:cloudDrift1 18s ease-in-out infinite;}
+.cloud-5{animation:cloudDrift2 14s ease-in-out infinite;}
+.cloud-6{animation:cloudDrift6 19s ease-in-out infinite;}
+.cloud-7{animation:cloudDrift7 11s ease-in-out infinite;}
+.cloud-8{animation:cloudDrift8 22s ease-in-out infinite;}
+.cloud-9{animation:cloudDrift1 15s ease-in-out infinite 3s;}
+.cloud-10{animation:cloudDrift2 20s ease-in-out infinite 5s;}
+.cloud-11{animation:cloudDrift3 13s ease-in-out infinite 2s;}
+.cloud-12{animation:cloudDrift6 17s ease-in-out infinite 7s;}
+
+
+/* ===== ABOUT EXPANDABLE ===== */
+.about-teaser{
+  text-align:center;
+  margin:32px auto 0;
+  max-width:700px;
+}
+.about-expand-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-family:'Quicksand',sans-serif;
+  font-size:15px;
+  font-weight:700;
+  color:var(--blue);
+  background:rgba(255,255,255,.7);
+  border:none;
+  cursor:pointer;
+  padding:10px 24px;
+  border-radius:50px;
+  transition:.25s;
+  backdrop-filter:blur(6px);
+  box-shadow:0 2px 12px rgba(26,95,168,.1);
+}
+.about-expand-btn:hover{background:#fff;box-shadow:0 4px 20px rgba(26,95,168,.15);}
+.about-expand-btn .arrow{
+  display:inline-block;
+  font-size:18px;
+  transition:transform .35s;
+  line-height:1;
+}
+.about-expand-btn.open .arrow{transform:rotate(180deg);}
+.about-text{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .5s cubic-bezier(.4,0,.2,1), opacity .4s;
+  opacity:0;
+  text-align:left;
+}
+.about-text.open{
+  max-height:600px;
+  opacity:1;
+}
+.about-text-inner{
+  font-family:'Inter',sans-serif;
+  font-size:15px;
+  color:#444;
+  line-height:1.8;
+  background:rgba(255,255,255,.75);
+  border-radius:20px;
+  padding:28px 32px;
+  margin-top:16px;
+  box-shadow:0 2px 16px rgba(26,95,168,.07);
+  backdrop-filter:blur(6px);
+}
+.about-text-inner p{margin-bottom:12px;}
+.about-text-inner p:last-child{margin-bottom:0;}
 
 /* scroll fade-in */
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
@@ -557,7 +694,7 @@ button{outline:none;border:none;}
 =========================== -->
 <nav class="nav">
   <a href="#" class="nav-logo">
-    <img src="VCIELKA_LOGO.png" alt="Školka Včielka" class="cms-logo" style="height:50px;width:auto;object-fit:contain;"/>
+    <img src="VCIELKA_LOGO.png" alt="Materská škola Včielka" class="cms-logo" style="height:50px;width:auto;object-fit:contain;"/>
   </a>
   <nav class="nav-links">
     <a href="#o-nas">O nás</a>
@@ -591,6 +728,17 @@ button{outline:none;border:none;}
      HERO
 =========================== -->
 <section class="hero" id="o-nas">
+
+  <!-- CLOUD DECORATIONS HERO -->
+  <div class="cloud-deco cloud-1" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;top:5%;left:-3%;"><svg viewBox="0 0 198.9 90.1" xmlns="http://www.w3.org/2000/svg" style="width:240px;display:block;"><path d="M142.2,47.3c0-18.8-15.3-34.1-34.1-34.1-8.2,0-15.7,2.9-21.6,7.6C77.8,8.2,63.5,0,47.2,0,21.1,0,0,21.1,0,47.2v13c0,16.5,13.4,29.9,29.9,29.9h139.1c16.5,0,29.9-13.4,29.9-29.9,0,0,0-11.9-56.7-12.9Z" fill="#fff"/></svg></div>
+  <div class="cloud-deco cloud-7" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;top:12%;left:28%;"><svg viewBox="0 0 74.6 41.8" xmlns="http://www.w3.org/2000/svg" style="width:90px;display:block;"><path d="M50.3,5.3c-3.3,0-6.2,1.1-8.6,3C38.2,3.3,32.5,0,26,0,15.7,0,7.2,8.4,7.2,18.8v1.5c-4.1.8-7.2,4.3-7.2,8.6,0,3.8,2.5,7,5.9,8.5,2.2,1,4.8,1.4,7.5,1.2,2.2,2,5.1,3.2,8.2,3.2h41.1c6.6,0,11.9-5.3,11.9-11.9,0-16.2-8.4-24.6-24.3-24.6Z" fill="#fff"/></svg></div>
+  <div class="cloud-deco cloud-2" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;top:10%;right:2%;"><svg viewBox="0 0 218.2 104.9" xmlns="http://www.w3.org/2000/svg" style="width:200px;display:block;"><path d="M126.1,13.2c-8.2,0-15.7,2.9-21.6,7.6C95.8,8.2,81.5,0,65.2,0,39.1,0,18,21.1,18,47.2c0,1.3,0,2.5.1,3.8C7.8,53,0,61.8,0,72.5c0,9.6,6.2,17.5,14.8,21.3,5.6,2.5,12.1,3.5,18.9,3,5.4,5,12.6,8.1,20.5,8.1h134.1c16.5,0,29.9-13.4,29.9-29.9v-15.9c0-23-5.7-45.1-92.1-45.9Z" fill="#fff"/></svg></div>
+  <div class="cloud-deco cloud-3" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;top:35%;right:22%;"><svg viewBox="0 0 74.6 41.8" xmlns="http://www.w3.org/2000/svg" style="width:70px;display:block;"><path d="M50.3,5.3c-3.3,0-6.2,1.1-8.6,3C38.2,3.3,32.5,0,26,0,15.7,0,7.2,8.4,7.2,18.8v1.5c-4.1.8-7.2,4.3-7.2,8.6,0,3.8,2.5,7,5.9,8.5,2.2,1,4.8,1.4,7.5,1.2,2.2,2,5.1,3.2,8.2,3.2h41.1c6.6,0,11.9-5.3,11.9-11.9,0-16.2-8.4-24.6-24.3-24.6Z" fill="#fff"/></svg></div>
+  <div class="cloud-deco cloud-8" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;bottom:28%;left:42%;"><svg viewBox="0 0 198.9 90.1" xmlns="http://www.w3.org/2000/svg" style="width:180px;display:block;"><path d="M142.2,47.3c0-18.8-15.3-34.1-34.1-34.1-8.2,0-15.7,2.9-21.6,7.6C77.8,8.2,63.5,0,47.2,0,21.1,0,0,21.1,0,47.2v13c0,16.5,13.4,29.9,29.9,29.9h139.1c16.5,0,29.9-13.4,29.9-29.9,0,0,0-11.9-56.7-12.9Z" fill="#fff"/></svg></div>
+  <div class="cloud-deco cloud-6" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;bottom:18%;left:8%;"><svg viewBox="0 0 74.6 41.8" xmlns="http://www.w3.org/2000/svg" style="width:110px;display:block;"><path d="M50.3,5.3c-3.3,0-6.2,1.1-8.6,3C38.2,3.3,32.5,0,26,0,15.7,0,7.2,8.4,7.2,18.8v1.5c-4.1.8-7.2,4.3-7.2,8.6,0,3.8,2.5,7,5.9,8.5,2.2,1,4.8,1.4,7.5,1.2,2.2,2,5.1,3.2,8.2,3.2h41.1c6.6,0,11.9-5.3,11.9-11.9,0-16.2-8.4-24.6-24.3-24.6Z" fill="#fff"/></svg></div>
+  <div class="cloud-deco cloud-9" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;bottom:12%;right:10%;"><svg viewBox="0 0 218.2 104.9" xmlns="http://www.w3.org/2000/svg" style="width:150px;display:block;"><path d="M126.1,13.2c-8.2,0-15.7,2.9-21.6,7.6C95.8,8.2,81.5,0,65.2,0,39.1,0,18,21.1,18,47.2c0,1.3,0,2.5.1,3.8C7.8,53,0,61.8,0,72.5c0,9.6,6.2,17.5,14.8,21.3,5.6,2.5,12.1,3.5,18.9,3,5.4,5,12.6,8.1,20.5,8.1h134.1c16.5,0,29.9-13.4,29.9-29.9v-15.9c0-23-5.7-45.1-92.1-45.9Z" fill="#fff"/></svg></div>
+  <div class="cloud-deco cloud-11" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;top:55%;left:60%;"><svg viewBox="0 0 74.6 41.8" xmlns="http://www.w3.org/2000/svg" style="width:60px;display:block;"><path d="M50.3,5.3c-3.3,0-6.2,1.1-8.6,3C38.2,3.3,32.5,0,26,0,15.7,0,7.2,8.4,7.2,18.8v1.5c-4.1.8-7.2,4.3-7.2,8.6,0,3.8,2.5,7,5.9,8.5,2.2,1,4.8,1.4,7.5,1.2,2.2,2,5.1,3.2,8.2,3.2h41.1c6.6,0,11.9-5.3,11.9-11.9,0-16.2-8.4-24.6-24.3-24.6Z" fill="#fff"/></svg></div>
+  <div class="cloud-deco cloud-5" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;top:22%;left:52%;"><svg viewBox="0 0 198.9 90.1" xmlns="http://www.w3.org/2000/svg" style="width:130px;display:block;"><path d="M142.2,47.3c0-18.8-15.3-34.1-34.1-34.1-8.2,0-15.7,2.9-21.6,7.6C77.8,8.2,63.5,0,47.2,0,21.1,0,0,21.1,0,47.2v13c0,16.5,13.4,29.9,29.9,29.9h139.1c16.5,0,29.9-13.4,29.9-29.9,0,0,0-11.9-56.7-12.9Z" fill="#fff"/></svg></div>
   <!-- fullscreen background photo -->
   <img id="cms-hero-bg" class="hero-bg-img" src="" alt="Hero" style="display:none;"/>
   <!-- dark overlay for readability -->
@@ -599,7 +747,7 @@ button{outline:none;border:none;}
   <img class="hero-bee-deco" src="https://www.skolka-vcielka.sk/images/header_imgs/vcela2.png" alt=""/>
   <img class="hero-bee-deco2" src="https://www.skolka-vcielka.sk/images/header_imgs/vcela3.png" alt=""/>
   <!-- content -->
-  <div style="width:100%;max-width:1100px;margin:0 auto;padding:0 32px;">
+  <div style="width:100%;max-width:1100px;margin:0 auto;padding:0 0 0 48px;">
   <div class="hero-content fade-in">
     <div class="hero-badge">🐝 Ružinov, Bratislava</div>
     <h1 id="cms-hero-title">Kde detičky <em>rastú</em><br>a objavujú svet</h1>
@@ -616,18 +764,7 @@ button{outline:none;border:none;}
       <img class="hero-blob-photo" id="heroBlobPhoto" src="" alt="" style="display:none;"/>
     </div>
     <div class="hero-blob-text">
-      <span class="hero-news-tag">🔔 Novinka</span>
       <span class="hero-news-title" id="heroNewsTitle"></span>
-    </div>
-  </div>
-  <div id="heroNewsBlobWrap" style="position:absolute;bottom:90px;right:48px;z-index:4;display:none;flex-direction:column;align-items:center;gap:8px;cursor:pointer;animation:heroBlobFloat 5s ease-in-out infinite alternate;" onclick="openNewsFromHero()">
-    <div class="hero-news-blob" id="heroNewsBlob">
-      <img class="hero-blob-photo" id="heroBlobPhoto" src="" alt="" style="display:none;"/>
-      <div class="hero-blob-overlay"></div>
-    </div>
-    <div style="background:rgba(0,0,0,.6);backdrop-filter:blur(8px);border-radius:16px;padding:7px 14px;text-align:center;max-width:160px;margin:0 auto;">
-      <div style="font-size:8px;font-weight:700;color:#F9C832;text-transform:uppercase;letter-spacing:.8px;margin-bottom:3px;font-family:'Quicksand',sans-serif;">🔔 Novinka</div>
-      <div id="heroNewsTitle" style="font-size:11px;font-weight:700;color:#fff;line-height:1.3;font-family:'Quicksand',sans-serif;"></div>
     </div>
   </div>
   <!-- white wave ON TOP of photo at bottom -->
@@ -658,14 +795,34 @@ button{outline:none;border:none;}
 <!-- ===========================
      SERVICES
 =========================== -->
-<section class="section bg-blue-pale" id="sluzby">
-    <div class="section-inner">
+<section class="section bg-blue-pale" id="sluzby" style="position:relative;">
+    
+    <!-- CLOUD DECORATIONS SERVICES -->
+    <div class="cloud-deco cloud-4" style="position:absolute;top:5%;right:-1%;width:180px;opacity:0.4;pointer-events:none;z-index:0;"><svg viewBox="0 0 198.9 90.1" xmlns="http://www.w3.org/2000/svg"><path d="M142.2,47.3c0-18.8-15.3-34.1-34.1-34.1-8.2,0-15.7,2.9-21.6,7.6C77.8,8.2,63.5,0,47.2,0,21.1,0,0,21.1,0,47.2v13c0,16.5,13.4,29.9,29.9,29.9h139.1c16.5,0,29.9-13.4,29.9-29.9,0,0,0-11.9-56.7-12.9Z" fill="#fff"/></svg></div>
+    <div class="cloud-deco cloud-6" style="position:absolute;top:40%;left:-2%;width:140px;opacity:0.4;pointer-events:none;z-index:0;"><svg viewBox="0 0 218.2 104.9" xmlns="http://www.w3.org/2000/svg"><path d="M126.1,13.2c-8.2,0-15.7,2.9-21.6,7.6C95.8,8.2,81.5,0,65.2,0,39.1,0,18,21.1,18,47.2c0,1.3,0,2.5.1,3.8C7.8,53,0,61.8,0,72.5c0,9.6,6.2,17.5,14.8,21.3,5.6,2.5,12.1,3.5,18.9,3,5.4,5,12.6,8.1,20.5,8.1h134.1c16.5,0,29.9-13.4,29.9-29.9v-15.9c0-23-5.7-45.1-92.1-45.9Z" fill="#fff"/></svg></div>
+    <div class="cloud-deco cloud-7" style="position:absolute;bottom:8%;right:5%;width:100px;opacity:0.4;pointer-events:none;z-index:0;"><svg viewBox="0 0 74.6 41.8" xmlns="http://www.w3.org/2000/svg"><path d="M50.3,5.3c-3.3,0-6.2,1.1-8.6,3C38.2,3.3,32.5,0,26,0,15.7,0,7.2,8.4,7.2,18.8v1.5c-4.1.8-7.2,4.3-7.2,8.6,0,3.8,2.5,7,5.9,8.5,2.2,1,4.8,1.4,7.5,1.2,2.2,2,5.1,3.2,8.2,3.2h41.1c6.6,0,11.9-5.3,11.9-11.9,0-16.2-8.4-24.6-24.3-24.6Z" fill="#fff"/></svg></div>
+    <div class="cloud-deco cloud-5" style="position:absolute;bottom:2%;left:30%;width:80px;opacity:0.4;pointer-events:none;z-index:0;"><svg viewBox="0 0 74.6 41.8" xmlns="http://www.w3.org/2000/svg"><path d="M50.3,5.3c-3.3,0-6.2,1.1-8.6,3C38.2,3.3,32.5,0,26,0,15.7,0,7.2,8.4,7.2,18.8v1.5c-4.1.8-7.2,4.3-7.2,8.6,0,3.8,2.5,7,5.9,8.5,2.2,1,4.8,1.4,7.5,1.2,2.2,2,5.1,3.2,8.2,3.2h41.1c6.6,0,11.9-5.3,11.9-11.9,0-16.2-8.4-24.6-24.3-24.6Z" fill="#fff"/></svg></div>
+    <div class="section-inner" style="position:relative;z-index:1;">
   <div class="section-center fade-in">
     <span class="label">Čo vám ponúkame</span>
     <h2>Naše služby a aktivity</h2>
     <p class="desc">Bohatý program pre všestranný rozvoj — od jazykov až po šport a umenie.</p>
   </div>
   <div class="services-grid fade-in" id="cms-activities"></div>
+
+  <!-- ABOUT EXPANDABLE -->
+  <div class="about-teaser fade-in" style="position:relative;z-index:1;">
+    <button class="about-expand-btn" id="aboutBtn" onclick="toggleAbout()">
+      Viac o nás <span class="arrow">↓</span>
+    </button>
+    <div class="about-text" id="aboutText">
+      <div class="about-text-inner">
+        <p>Súkromná materská škola je predškolské zariadenie, ktoré poskytuje predprimárne vzdelávanie. Podporuje celostný osobnostný rozvoj detí v oblasti sociálno-emocionálnej, intelektuálnej, telesnej, morálnej estetickej, rozvíja schopnosti a zručnosti detí. Utvára predpoklady na ďalšie vzdelávanie. Pripravuje na život v spoločnosti s ohľadom na individuálne a vekové osobitosti detí.</p>
+        <p>Vzdelávací proces prebieha v súlade so Školským vzdelávacím programom „Zvedavá Včielka". Súkromná materská škola je 3-triedna. Poskytuje celodennú výchovu a vzdelávanie deťom vo veku od 2,5 do 6 rokov a deťom s odkladom povinnej školskej dochádzky.</p>
+        <p>Zariadenie je zaradené do siete škôl a školských zariadení Ministerstvom školstva, vedy, výskumu a športu Slovenskej republiky pod číslom: <strong>CD-2008-12814/27279-1:917</strong></p>
+      </div>
+    </div>
+  </div>
   </div>
 </section>
 
@@ -726,6 +883,20 @@ button{outline:none;border:none;}
       <div class="z-item"><span style="font-size:24px;">🎨</span><div><div class="z-item-title">Kreatívne myslenie</div><div class="z-item-desc">Umenie, hudba, tvorivé hry</div></div></div>
       <div class="z-item"><span style="font-size:24px;">🏃</span><div><div class="z-item-title">Telesný rozvoj</div><div class="z-item-desc">Šport, pohyb, zdravý životný štýl</div></div></div>
       <div class="z-item"><span style="font-size:24px;">🔬</span><div><div class="z-item-title">Intelektuálny rozvoj</div><div class="z-item-desc">Zvedavosť, pokusy, objavovanie</div></div></div>
+      <!-- ZVEDAVA EXPAND -->
+      <div style="margin-top:20px;">
+        <button class="about-expand-btn" id="zvedavaBtn" onclick="toggleZvedava()" style="font-size:14px;">
+          Viac o programe <span class="arrow">↓</span>
+        </button>
+        <div class="about-text" id="zvedavaText">
+          <div class="about-text-inner" style="background:rgba(255,255,255,.65);">
+            <p>V školskom vzdelávacom programe <strong>Zvedavá Včielka</strong> sú rozpracované Učebné osnovy, ktoré sú zostavené z 10 obsahových celkov a 41 tém, ktoré sa navzájom prelínajú, dopĺňajú a spolu súvisia.</p>
+            <p>Učebné osnovy sú vytvorené podľa podmienok školy s prihliadnutím na ročné obdobia, sviatky roka, so zameraním na rozvoj optimálnej kognitívnej, senzomotorickej a sociálno-emocionálnej úrovne detí a špecifiká materskej školy.</p>
+            <p>Ku každému obsahovému celku sú začlenené všetky vzdelávacie oblasti: <strong>Jazyk a komunikácia, Matematika a práca s informáciami, Človek a spoločnosť, Človek a príroda, Človek a svet práce, Umenie a kultúra, Zdravie a pohyb.</strong></p>
+            <p>V Učebných osnovách sú zapracované Výkonové štandardy a Výkonové úrovne.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div></div>
 </section>
@@ -738,7 +909,10 @@ button{outline:none;border:none;}
 <!-- ===========================
      GALLERY
 =========================== -->
-<section class="gallery-section bg-blue-pale" id="galeria">
+<section class="gallery-section bg-blue-pale" id="galeria" style="position:relative;">
+  <!-- CLOUD DECORATIONS GALLERY -->
+  <div class="cloud-deco cloud-10" style="position:absolute;top:8%;right:2%;width:160px;opacity:0.4;pointer-events:none;z-index:0;"><svg viewBox="0 0 198.9 90.1" xmlns="http://www.w3.org/2000/svg"><path d="M142.2,47.3c0-18.8-15.3-34.1-34.1-34.1-8.2,0-15.7,2.9-21.6,7.6C77.8,8.2,63.5,0,47.2,0,21.1,0,0,21.1,0,47.2v13c0,16.5,13.4,29.9,29.9,29.9h139.1c16.5,0,29.9-13.4,29.9-29.9,0,0,0-11.9-56.7-12.9Z" fill="#fff"/></svg></div>
+  <div class="cloud-deco cloud-7" style="position:absolute;bottom:15%;left:0%;width:100px;opacity:0.4;pointer-events:none;z-index:0;"><svg viewBox="0 0 74.6 41.8" xmlns="http://www.w3.org/2000/svg"><path d="M50.3,5.3c-3.3,0-6.2,1.1-8.6,3C38.2,3.3,32.5,0,26,0,15.7,0,7.2,8.4,7.2,18.8v1.5c-4.1.8-7.2,4.3-7.2,8.6,0,3.8,2.5,7,5.9,8.5,2.2,1,4.8,1.4,7.5,1.2,2.2,2,5.1,3.2,8.2,3.2h41.1c6.6,0,11.9-5.3,11.9-11.9,0-16.2-8.4-24.6-24.3-24.6Z" fill="#fff"/></svg></div>
 
   <div class="section-inner"><div class="gallery-header fade-in">
     <div>
@@ -801,13 +975,19 @@ button{outline:none;border:none;}
 <!-- ===========================
      NEWS
 =========================== -->
-<section class="section bg-warm" id="aktuality">
-    <div class="section-inner"><div class="news-header fade-in">
+<section class="section bg-warm" id="aktuality" style="position:relative;">
+    
+    <!-- CLOUD DECORATIONS NEWS -->
+    <div class="cloud-deco cloud-2" style="position:absolute;top:5%;right:0%;width:200px;opacity:0.4;pointer-events:none;z-index:0;"><svg viewBox="0 0 218.2 104.9" xmlns="http://www.w3.org/2000/svg"><path d="M126.1,13.2c-8.2,0-15.7,2.9-21.6,7.6C95.8,8.2,81.5,0,65.2,0,39.1,0,18,21.1,18,47.2c0,1.3,0,2.5.1,3.8C7.8,53,0,61.8,0,72.5c0,9.6,6.2,17.5,14.8,21.3,5.6,2.5,12.1,3.5,18.9,3,5.4,5,12.6,8.1,20.5,8.1h134.1c16.5,0,29.9-13.4,29.9-29.9v-15.9c0-23-5.7-45.1-92.1-45.9Z" fill="#fff"/></svg></div>
+    <div class="cloud-deco cloud-8" style="position:absolute;top:30%;left:-1%;width:110px;opacity:0.4;pointer-events:none;z-index:0;"><svg viewBox="0 0 74.6 41.8" xmlns="http://www.w3.org/2000/svg"><path d="M50.3,5.3c-3.3,0-6.2,1.1-8.6,3C38.2,3.3,32.5,0,26,0,15.7,0,7.2,8.4,7.2,18.8v1.5c-4.1.8-7.2,4.3-7.2,8.6,0,3.8,2.5,7,5.9,8.5,2.2,1,4.8,1.4,7.5,1.2,2.2,2,5.1,3.2,8.2,3.2h41.1c6.6,0,11.9-5.3,11.9-11.9,0-16.2-8.4-24.6-24.3-24.6Z" fill="#fff"/></svg></div>
+    <div class="cloud-deco cloud-3" style="position:absolute;bottom:10%;left:1%;width:160px;opacity:0.4;pointer-events:none;z-index:0;"><svg viewBox="0 0 198.9 90.1" xmlns="http://www.w3.org/2000/svg"><path d="M142.2,47.3c0-18.8-15.3-34.1-34.1-34.1-8.2,0-15.7,2.9-21.6,7.6C77.8,8.2,63.5,0,47.2,0,21.1,0,0,21.1,0,47.2v13c0,16.5,13.4,29.9,29.9,29.9h139.1c16.5,0,29.9-13.4,29.9-29.9,0,0,0-11.9-56.7-12.9Z" fill="#fff"/></svg></div>
+    <div class="cloud-deco cloud-12" style="position:absolute;bottom:2%;right:3%;width:90px;opacity:0.4;pointer-events:none;z-index:0;"><svg viewBox="0 0 74.6 41.8" xmlns="http://www.w3.org/2000/svg"><path d="M50.3,5.3c-3.3,0-6.2,1.1-8.6,3C38.2,3.3,32.5,0,26,0,15.7,0,7.2,8.4,7.2,18.8v1.5c-4.1.8-7.2,4.3-7.2,8.6,0,3.8,2.5,7,5.9,8.5,2.2,1,4.8,1.4,7.5,1.2,2.2,2,5.1,3.2,8.2,3.2h41.1c6.6,0,11.9-5.3,11.9-11.9,0-16.2-8.4-24.6-24.3-24.6Z" fill="#fff"/></svg></div>
+    <div class="section-inner" style="position:relative;z-index:1;"><div class="news-header fade-in">
     <div>
       <span class="label" style="color:#C49000;">Aktuality</span>
       <h2>Novinky v škôlke</h2>
     </div>
-    <a href="noviny.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;">Všetky novinky →</a>
+    <a href="novinky.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;">Všetky novinky →</a>
   </div>
   <div class="news-grid fade-in" id="cms-news"></div>
 </section>
@@ -817,7 +997,7 @@ button{outline:none;border:none;}
 <!-- ===========================
      PRICING
 =========================== -->
-<section class="section" style="background:#1A5FA8;padding-top:80px;padding-bottom:90px;position:relative;" id="cennik">
+<section class="section" style="background:#1A5FA8;padding-top:110px;padding-bottom:90px;position:relative;" id="cennik">
   <!-- wave top -->
   <div style="position:absolute;top:-1px;left:0;width:100%;line-height:0;pointer-events:none;z-index:2;">
     <svg viewBox="0 0 1440 70" preserveAspectRatio="none" style="width:100%;display:block;" xmlns="http://www.w3.org/2000/svg">
@@ -885,11 +1065,11 @@ button{outline:none;border:none;}
             <div class="contact-sub">kliknutím zavoláte</div>
           </div>
       </a>
-      <a class="contact-card green" href="/cdn-cgi/l/email-protection#066f68606946756d696a6d672b70656f636a6d6728756d">
+      <a class="contact-card green" href="/cdn-cgi/l/email-protection#4d24232b220d3e262221262c603b2e242821262c633e26">
           <div class="contact-icon">✉️</div>
           <div class="contact-body">
             <div class="contact-label">E-mail</div>
-            <div class="cms-email contact-value"><span class="__cf_email__" data-cfemail="620b0c040d2211090d0e09034f14010b070e09034c1109">[email&#160;protected]</span></div>
+            <div class="cms-email contact-value"><span class="__cf_email__" data-cfemail="3f565159507f4c545053545e12495c565a53545e114c54">[email&#160;protected]</span></div>
             <div class="contact-sub">kliknutím napíšete</div>
           </div>
       </a>
@@ -907,7 +1087,7 @@ button{outline:none;border:none;}
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        title="Mapa – Školka Včielka">
+        title="Mapa – Materská škola Včielka">
       </iframe>
     </div>
   </div></div>
@@ -927,7 +1107,7 @@ button{outline:none;border:none;}
     <div>
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:11px;">
         <img src="VCIELKA_LOGO.png" alt="Včielka" class="cms-logo" style="height:40px;width:auto;object-fit:contain;"/>
-        <h4 style="margin:0;">Školka Včielka</h4>
+        <h4 style="margin:0;">Materská škola Včielka</h4>
       </div>
       <p class="footer-desc" id="cms-footer-desc">Súkromná materská škola akreditovaná MŠVVaŠ SR. Program Zvedavá Včielka pre deti od 2,5 do 6 rokov v Ružinove, Bratislava.</p>
       <a href="https://www.skolka-vcielka.sk/user" class="footer-vs" target="_blank">🔐 Virtuálna škôlka</a>
@@ -947,12 +1127,12 @@ button{outline:none;border:none;}
       <h4>Kontakt</h4>
       <span class="footer-link">Sečovská 144/3, Ružinov</span>
       <a href="tel:0918607935" class="footer-link">0918 607 935</a>
-      <a href="/cdn-cgi/l/email-protection#a8c1c6cec7e8dbc3c7c4c3c985decbc1cdc4c3c986dbc3" class="footer-link"><span class="__cf_email__" data-cfemail="0e676068614e7d656162656f23786d676b62656f207d65">[email&#160;protected]</span></a>
+      <a href="/cdn-cgi/l/email-protection#7c15121a133c0f171310171d510a1f151910171d520f17" class="footer-link"><span class="__cf_email__" data-cfemail="f79e999198b7849c989b9c96da81949e929b9c96d9849c">[email&#160;protected]</span></a>
       <span class="footer-link">Po–Pia: 7:00 – 17:00</span>
     </div>
   </div>
   <div class="footer-bottom">
-    <span class="footer-copy" id="cms-footer-copy-left">© 2025 Školka Včielka · Všetky práva vyhradené</span>
+    <span class="footer-copy" id="cms-footer-copy-left">© 2025 Materská škola Včielka · Všetky práva vyhradené</span>
     <span class="footer-copy" id="cms-footer-copy-right">Vytvorené s 🐝 láskou v Bratislave</span>
   </div>
   </div>
@@ -981,6 +1161,7 @@ button{outline:none;border:none;}
     <div class="news-popup-body">
       <div class="news-popup-date" id="popupDate"></div>
       <div class="news-popup-title" id="popupTitle"></div>
+      <div class="news-popup-excerpt" id="popupExcerpt"></div>
       <div class="news-popup-content" id="popupContent"></div>
     </div>
   </div>
@@ -994,18 +1175,15 @@ button{outline:none;border:none;}
   <button class="lightbox-next" id="lbNext">&#8250;</button>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 document.addEventListener('DOMContentLoaded',function(){
 // ===== MOBILE MENU =====
 const burger=document.getElementById('burger');
 const menu=document.getElementById('mobileMenu');
 const menuClose=document.getElementById('menuClose');
-burger.addEventListener('click',()=>menu.classList.toggle('open'));
-menuClose.addEventListener('click',()=>menu.classList.remove('open'));
-document.querySelectorAll('.menu-link, .nav-mobile a').forEach(l=>l.addEventListener('click',()=>{
-  menu.classList.remove('open');
-  document.body.style.overflow='';
-}));
+burger.addEventListener('click',function(){var o=menu.classList.toggle('open');document.body.style.overflow=o?'hidden':'';});
+menuClose.addEventListener('click',function(){menu.classList.remove('open');document.body.style.overflow='';});
+menu.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;menu.classList.remove('open');document.body.style.overflow='';var h=a.getAttribute('href');if(h&&h.startsWith('#')){e.preventDefault();setTimeout(function(){var t=document.querySelector(h);if(t)t.scrollIntoView({behavior:'smooth'});},50);}});
 
 // ===== SCROLL FADE IN =====
 const obs=new IntersectionObserver((entries)=>{
@@ -1035,26 +1213,33 @@ if(track){
   track.addEventListener('mousemove',e=>{if(!isDown)return;e.preventDefault();const x=e.pageX-track.offsetLeft;track.scrollLeft=scrollL-(x-startX)*1.5;});
 }
 
-// ===== SCROLL TO NEWS =====
-function openNewsPopupFromCard(el){
-  const card = el.closest('.news-card');
-  if(!card) return;
-  const title = card.querySelector('.news-title')?.textContent||'';
-  const date = card.querySelector('.news-date')?.textContent||'';
-  const excerpt = card.querySelector('.news-excerpt')?.textContent||'';
-  const imgEl = card.querySelector('.news-img img');
-  const img = imgEl ? imgEl.src : '';
-  const color = [...card.classList].find(cl=>['blue','yellow','green'].includes(cl))||'blue';
-  const cached = (window._cmsNews||[]).find(n=>n.title===title);
-  _showPopup({
-    title,
-    published_at: date,
-    content: cached?.content || cached?.excerpt || excerpt,
-    photo_url: img,
-    color
-  });
+
+
+// ===== ZVEDAVA TOGGLE =====
+function toggleZvedava(){
+  const btn = document.getElementById('zvedavaBtn');
+  const text = document.getElementById('zvedavaText');
+  if(!btn || !text) return;
+  const isOpen = text.classList.contains('open');
+  text.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  if(!isOpen) setTimeout(()=>{ text.scrollIntoView({behavior:'smooth', block:'nearest'}); }, 100);
 }
 
+// ===== ABOUT TOGGLE =====
+function toggleAbout(){
+  const btn = document.getElementById('aboutBtn');
+  const text = document.getElementById('aboutText');
+  if(!btn || !text) return;
+  const isOpen = text.classList.contains('open');
+  text.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  if(!isOpen){
+    setTimeout(()=>{ text.scrollIntoView({behavior:'smooth', block:'nearest'}); }, 100);
+  }
+}
+
+// ===== SCROLL TO NEWS =====
 function scrollToNews(e){
   e.preventDefault();
   const el = document.getElementById('aktuality');
@@ -1176,33 +1361,35 @@ async function loadCMS() {
     }
 
     // ── News ──
-    const { data: newsList, error: newsErr } = await cms.from('news').select('*').order('created_at', {ascending:false}).limit(3);
+    const { data: newsList, error: newsErr } = await cms.from('news').select('*').order('featured', {ascending:false}).order('created_at', {ascending:false}).limit(3);
     console.log('News:', newsList?.length, 'Error:', newsErr?.message);
     if (newsList && newsList.length > 0) {
       window._cmsNews = newsList;
       const container = document.getElementById('cms-news');
       if (container) container.innerHTML = newsList.map(n => `
-        <div class="news-card ${n.color}">
+        <div class="news-card ${n.color}" style="cursor:pointer;" onclick="openNewsPopupById(${n.id})">
           <div class="news-img">${n.photo_url ? '<img src="'+n.photo_url+'" alt=""/>' : '📸 foto akcie'}</div>
           <div class="news-body">
             <div class="news-date">${new Date(n.published_at||n.created_at).toLocaleDateString('sk-SK',{day:'numeric',month:'long',year:'numeric'})}</div>
             <div class="news-title">${n.title}</div>
             <div class="news-excerpt">${n.excerpt||''}</div>
-            <a href="#" class="news-more" onclick="event.preventDefault();openNewsPopupById(${n.id})">Čítať viac →</a>
+            <a href="#" onclick="event.stopPropagation();openNewsPopupById(${n.id});return false;" class="news-more">Čítať viac →</a>
           </div>
         </div>
       `).join('');
-      // hero blob
-      const latest = newsList[0];
+      // hero blob — use featured news, fallback to latest
+      const featured = newsList.find(n => n.featured) || newsList[0];
       const blob = document.getElementById('heroNewsBlob');
-      if (blob && latest) {
-        document.getElementById('heroNewsTitle').textContent = latest.title;
-        if (latest.photo_url) {
+      if (blob && featured) {
+        document.getElementById('heroNewsTitle').textContent = featured.title;
+        if (featured.photo_url) {
           const ph = document.getElementById('heroBlobPhoto');
-          if(ph){ ph.src = latest.photo_url; ph.style.display='block'; }
+          if(ph){ ph.src = featured.photo_url; ph.style.display='block'; }
         }
         blob.style.display = 'block';
-        blob._newsId = latest.id;
+        blob._newsId = featured.id;
+        window._cmsNews = window._cmsNews || [];
+        if (!window._cmsNews.find(x => x.id === featured.id)) window._cmsNews.push(featured);
       }
     }
 
@@ -1293,26 +1480,33 @@ document.addEventListener('DOMContentLoaded', loadCMS);
 })();
 
 
-// ===== SCROLL TO NEWS =====
-function openNewsPopupFromCard(el){
-  const card = el.closest('.news-card');
-  if(!card) return;
-  const title = card.querySelector('.news-title')?.textContent||'';
-  const date = card.querySelector('.news-date')?.textContent||'';
-  const excerpt = card.querySelector('.news-excerpt')?.textContent||'';
-  const imgEl = card.querySelector('.news-img img');
-  const img = imgEl ? imgEl.src : '';
-  const color = [...card.classList].find(cl=>['blue','yellow','green'].includes(cl))||'blue';
-  const cached = (window._cmsNews||[]).find(n=>n.title===title);
-  _showPopup({
-    title,
-    published_at: date,
-    content: cached?.content || cached?.excerpt || excerpt,
-    photo_url: img,
-    color
-  });
+
+
+// ===== ZVEDAVA TOGGLE =====
+function toggleZvedava(){
+  const btn = document.getElementById('zvedavaBtn');
+  const text = document.getElementById('zvedavaText');
+  if(!btn || !text) return;
+  const isOpen = text.classList.contains('open');
+  text.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  if(!isOpen) setTimeout(()=>{ text.scrollIntoView({behavior:'smooth', block:'nearest'}); }, 100);
 }
 
+// ===== ABOUT TOGGLE =====
+function toggleAbout(){
+  const btn = document.getElementById('aboutBtn');
+  const text = document.getElementById('aboutText');
+  if(!btn || !text) return;
+  const isOpen = text.classList.contains('open');
+  text.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  if(!isOpen){
+    setTimeout(()=>{ text.scrollIntoView({behavior:'smooth', block:'nearest'}); }, 100);
+  }
+}
+
+// ===== SCROLL TO NEWS =====
 function scrollToNews(e){
   e.preventDefault();
   const el = document.getElementById('aktuality');
@@ -1382,8 +1576,6 @@ function openNewsFromHero(){
   const blob = document.getElementById('heroNewsBlob');
   if(blob && blob._newsId) {
     openNewsPopupById(blob._newsId);
-  } else {
-    document.getElementById('aktuality').scrollIntoView({behavior:'smooth'});
   }
 }
 function openNewsPopupById(id){
@@ -1391,44 +1583,38 @@ function openNewsPopupById(id){
   if(news) _showPopup(news);
 }
 function openNewsPopup(el){
-  try {
-    const card = el.closest('.news-card');
-    if(!card) return;
-    const title = card.querySelector('.news-title')?.textContent||'';
-    const date = card.querySelector('.news-date')?.textContent||'';
-    const excerpt = card.querySelector('.news-excerpt')?.textContent||'';
-    const imgEl = card.querySelector('.news-img img');
-    const img = (imgEl && imgEl.src && !imgEl.src.endsWith('/')) ? imgEl.src : '';
-    const color = [...card.classList].find(cl=>['blue','yellow','green'].includes(cl))||'blue';
-    const cached = (window._cmsNews||[]).find(n=>n.title===title);
-    const fullContent = cached?.content || cached?.excerpt || excerpt || 'Obsah článku čoskoro...';
-    _showPopup({title, published_at:date, content:fullContent, photo_url:img, color});
-  } catch(e) { console.error('openNewsPopup error:', e); }
+  const card = el.closest('.news-card');
+  if(!card) return;
+  const title = card.querySelector('.news-title')?.textContent||'';
+  const date = card.querySelector('.news-date')?.textContent||'';
+  const excerpt = card.querySelector('.news-excerpt')?.textContent||'';
+  const imgEl = card.querySelector('.news-img img');
+  const img = imgEl ? imgEl.src : '';
+  const color = [...card.classList].find(cl=>['blue','yellow','green'].includes(cl))||'blue';
+  const cached = (window._cmsNews||[]).find(n=>n.title===title);
+  _showPopup({title, published_at:date, content:cached?.content||excerpt, photo_url:img, color});
 }
 function _showPopup(news){
-  const colors={blue:'#C8E6FA',yellow:'#FFE87A',green:'#B2E8C8'};
-  let ov=document.getElementById('newsPopupOverlay');
-  if(!ov){
-    ov=document.createElement('div');
-    ov.className='news-popup-overlay';ov.id='newsPopupOverlay';
-    ov.onclick=function(e){if(e.target===ov)closeNewsPopup();};
-    document.body.appendChild(ov);
+  const colors = {blue:'#C8E6FA',yellow:'#FFE87A',green:'#B2E8C8'};
+  const hdr = document.getElementById('popupHeader');
+  if(!hdr) return;
+  if(news.photo_url){
+    hdr.style.background='transparent';
+    hdr.innerHTML='<button class="news-popup-close" onclick="closeNewsPopup()">✕</button><img src="'+news.photo_url+'" alt="" style="width:100%;height:100%;object-fit:cover;"/>';
+  } else {
+    hdr.style.background = colors[news.color]||'#C8E6FA';
+    hdr.innerHTML='<button class="news-popup-close" onclick="closeNewsPopup()">✕</button><div class="news-popup-header-placeholder" style="color:#1A5FA8;">📰</div>';
   }
-  let popup=document.getElementById('newsPopup');
-  if(!popup){
-    popup=document.createElement('div');
-    popup.className='news-popup';popup.id='newsPopup';
-    ov.appendChild(popup);
-  }
-  const dateStr=news.published_at?new Date(news.published_at).toLocaleDateString('sk-SK',{day:'numeric',month:'long',year:'numeric'}):'';
-  const fullText=(news.content||news.excerpt||'Obsah článku čoskoro...').replace(/\n/g,'<br>');
-  const headerBg=news.photo_url?'background:transparent;':'background:'+(colors[news.color]||'#C8E6FA')+';';
-  const headerImg=news.photo_url?'<img src="'+news.photo_url+'" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:28px 28px 0 0;"/>':'<div style="font-size:48px;color:#1A5FA8;">📰</div>';
-  popup.innerHTML='<div class="news-popup-header" style="'+headerBg+'"><button class="news-popup-close" onclick="closeNewsPopup()">✕</button>'+headerImg+'</div><div class="news-popup-body"><div class="news-popup-date">'+dateStr+'</div><div class="news-popup-title">'+news.title+'</div><div class="news-popup-content">'+fullText+'</div></div>';
-  ov.classList.add('open');
-  document.body.style.overflow='hidden';
-  popup.scrollTop=0;
-}
+  const d = document.getElementById('popupDate');
+  if(d) d.textContent = news.published_at ? new Date(news.published_at).toLocaleDateString('sk-SK',{day:'numeric',month:'long',year:'numeric'}) : '';
+  const t = document.getElementById('popupTitle');
+  if(t) t.textContent = news.title||'';
+  const ex = document.getElementById('popupExcerpt');
+  if(ex) ex.textContent = news.excerpt||'';
+  const ct = document.getElementById('popupContent');
+  if(ct) ct.innerHTML = (news.content||'').replace(/\n/g,'<br>');
+  const ov = document.getElementById('newsPopupOverlay');
+  if(ov){ ov.classList.add('open'); document.body.style.overflow='hidden'; }
 }
 function closeNewsPopup(){
   const ov = document.getElementById('newsPopupOverlay');
@@ -1446,4 +1632,10 @@ document.addEventListener('DOMContentLoaded', function(){
   const lbClose = document.getElementById('lbClose');
   const lb = document.getElementById('lightbox');
   if(lbPrev) lbPrev.addEventListener('click', e=>{e.stopPropagation();lbGo(-1);});
-  if(lbNext) lbNext
+  if(lbNext) lbNext.addEventListener('click', e=>{e.stopPropagation();lbGo(1);});
+  if(lb) lb.addEventListener('click',e=>{if(e.target===lb)closeLightbox();});
+  if(lbClose) lbClose.addEventListener('click',closeLightbox);
+});
+</script>
+</body>
+</html>
