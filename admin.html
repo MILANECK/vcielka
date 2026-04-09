@@ -545,21 +545,33 @@ async function loadNews() {
       <div class="field"><label>Krátky popis</label><input type="text" value="${n.excerpt||''}" onchange="updateNews(${n.id},'excerpt',this.value)"/></div>
       <div class="field"><label>Celý článok (text popupu)</label><textarea style="min-height:120px;" onchange="updateNews(${n.id},'content',this.value)">${n.content||''}</textarea></div>
       <div class="field"><label>📸 Hlavná fotografia</label>
+        ${n.photo_url ? `<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+          <img src="${n.photo_url}" style="height:70px;border-radius:8px;object-fit:cover;"/>
+          <button class="btn-danger" onclick="deleteNewsPhoto(${n.id},'photo_url')">🗑️ Odstrániť</button>
+        </div>` : ''}
         <div class="img-upload" style="padding:14px;">
           <input type="file" accept="image/*" onchange="uploadNewsPhoto(this,${n.id},'photo_url')"/>
-          <div>📸 ${n.photo_url ? '<img src="'+n.photo_url+'" style="height:60px;border-radius:8px;margin-top:6px;"/> Zmeniť' : 'Nahrať hlavnú fotografiu'}</div>
+          <div>📸 ${n.photo_url ? 'Zmeniť fotografiu' : 'Nahrať hlavnú fotografiu'}</div>
         </div>
       </div>
       <div class="field"><label>📸 Fotografia 2 (voliteľná)</label>
+        ${n.photo2_url ? `<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+          <img src="${n.photo2_url}" style="height:70px;border-radius:8px;object-fit:cover;"/>
+          <button class="btn-danger" onclick="deleteNewsPhoto(${n.id},'photo2_url')">🗑️ Odstrániť</button>
+        </div>` : ''}
         <div class="img-upload" style="padding:14px;">
-          <input type="file" accept="image/*" onchange="uploadNewsPhoto(this,${n.id},'photo_url_2')"/>
-          <div>📸 ${n.photo_url_2 ? '<img src="'+n.photo_url_2+'" style="height:60px;border-radius:8px;margin-top:6px;"/> Zmeniť' : 'Nahrať fotografiu 2'}</div>
+          <input type="file" accept="image/*" onchange="uploadNewsPhoto(this,${n.id},'photo2_url')"/>
+          <div>📸 ${n.photo2_url ? 'Zmeniť fotografiu 2' : 'Nahrať fotografiu 2'}</div>
         </div>
       </div>
       <div class="field"><label>📸 Fotografia 3 (voliteľná)</label>
+        ${n.photo3_url ? `<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+          <img src="${n.photo3_url}" style="height:70px;border-radius:8px;object-fit:cover;"/>
+          <button class="btn-danger" onclick="deleteNewsPhoto(${n.id},'photo3_url')">🗑️ Odstrániť</button>
+        </div>` : ''}
         <div class="img-upload" style="padding:14px;">
-          <input type="file" accept="image/*" onchange="uploadNewsPhoto(this,${n.id},'photo_url_3')"/>
-          <div>📸 ${n.photo_url_3 ? '<img src="'+n.photo_url_3+'" style="height:60px;border-radius:8px;margin-top:6px;"/> Zmeniť' : 'Nahrať fotografiu 3'}</div>
+          <input type="file" accept="image/*" onchange="uploadNewsPhoto(this,${n.id},'photo3_url')"/>
+          <div>📸 ${n.photo3_url ? 'Zmeniť fotografiu 3' : 'Nahrať fotografiu 3'}</div>
         </div>
       </div>
       <div class="field"><label>Farba karty</label>
@@ -607,6 +619,13 @@ async function addNews() {
 async function updateNews(id, field, value) {
   await db.from('news').update({ [field]: value }).eq('id', id);
   toast('✅ Uložené!');
+}
+
+async function deleteNewsPhoto(id, field) {
+  if (!confirm('Odstrániť túto fotografiu?')) return;
+  await db.from('news').update({ [field]: '' }).eq('id', id);
+  toast('Fotografia odstránená');
+  loadNews();
 }
 
 async function deleteNews(id) {
