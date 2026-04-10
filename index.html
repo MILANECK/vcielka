@@ -713,24 +713,10 @@ footer.footer .footer-inner{position:relative;z-index:2;}
 /* Stats bar, hero, cennik, footer = NO grain */
 
 /* ===== GRAIN TEXTURE ===== */
-/* Cut point: below the wave after stats bar. Sections get grain via ::before */
-#sluzby::before, .bg-warm::before, .bg-sky::before, .bg-green-pale::before,
-section#aktuality::before, section#kontakt::before {
-  content:'';
-  position:absolute;
-  inset:0;
-  background-image:url("7547.jpg");
-  background-size:400px 400px;
-  opacity:0.08;
-  pointer-events:none;
-  z-index:0;
-  mix-blend-mode:multiply;
-}
-/* Ensure content stays above grain */
-#sluzby .section-inner, .bg-warm .section-inner, .bg-sky .section-inner,
-.bg-green-pale .section-inner, section#aktuality .section-inner,
-section#kontakt .section-inner { position:relative; z-index:1; }
-/* Wave SVGs between sections also get grain to avoid clean stripes */
+.bg-blue-pale{background-image:url("7547.jpg");background-color:var(--blue-pale);background-blend-mode:multiply;background-size:400px 400px;opacity:1;}
+.bg-warm{background-image:url("7547.jpg");background-color:var(--warm-white);background-blend-mode:multiply;background-size:400px 400px;}
+.bg-sky{background-image:url("7547.jpg");background-color:var(--blue-sky);background-blend-mode:multiply;background-size:400px 400px;}
+.bg-green-pale{background-image:url("7547.jpg");background-color:var(--green-pale);background-blend-mode:multiply;background-size:400px 400px;}
 
 /* scroll fade-in */
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
@@ -877,7 +863,7 @@ section#kontakt .section-inner { position:relative; z-index:1; }
 </section>
 
 <!-- wave services→why -->
-<svg class="wave" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
+<svg class="wave" style="background-image:url('7547.jpg');background-size:400px 400px;background-blend-mode:multiply;" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
   <path d="M0,26 C350,55 700,0 1050,34 C1250,52 1380,12 1440,22 L1440,55 L0,55Z" fill="#FFFDF8"/>
 </svg>
 
@@ -904,7 +890,7 @@ section#kontakt .section-inner { position:relative; z-index:1; }
 </section>
 
 <!-- wave why→schedule -->
-<svg class="wave" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
+<svg class="wave" style="background-image:url('7547.jpg');background-size:400px 400px;background-blend-mode:multiply;" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
   <path d="M0,20 C300,55 650,0 950,36 C1150,58 1350,8 1440,26 L1440,55 L0,55Z" fill="#E2F5EC"/>
 </svg>
 
@@ -954,7 +940,7 @@ section#kontakt .section-inner { position:relative; z-index:1; }
 </section>
 
 <!-- wave schedule→gallery -->
-<svg class="wave" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
+<svg class="wave" style="background-image:url('7547.jpg');background-size:400px 400px;background-blend-mode:multiply;" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
   <path d="M0,35 C400,5 800,55 1200,22 C1340,8 1410,40 1440,32 L1440,55 L0,55Z" fill="#D9EFFF"/>
 </svg>
 
@@ -998,7 +984,7 @@ section#kontakt .section-inner { position:relative; z-index:1; }
 </section>
 
 <!-- wave gallery→testimonials -->
-<svg class="wave" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
+<svg class="wave" style="background-image:url('7547.jpg');background-size:400px 400px;background-blend-mode:multiply;" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
   <path d="M0,18 C250,55 600,0 900,34 C1100,55 1350,10 1440,24 L1440,55 L0,55Z" fill="#C8E6FA"/>
 </svg>
 
@@ -1021,7 +1007,7 @@ section#kontakt .section-inner { position:relative; z-index:1; }
 </section>
 
 <!-- wave testimonials→news -->
-<svg class="wave" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
+<svg class="wave" style="background-image:url('7547.jpg');background-size:400px 400px;background-blend-mode:multiply;" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
   <path d="M0,30 C300,5 700,55 1100,18 C1300,4 1400,40 1440,30 L1440,55 L0,55Z" fill="#FFFDF8"/>
 </svg>
 
