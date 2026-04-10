@@ -713,10 +713,16 @@ footer.footer .footer-inner{position:relative;z-index:2;}
 /* Stats bar, hero, cennik, footer = NO grain */
 
 /* ===== GRAIN TEXTURE ===== */
-.bg-blue-pale{background-image:url("7547.jpg");background-color:var(--blue-pale);background-blend-mode:multiply;background-size:400px 400px;opacity:1;}
-.bg-warm{background-image:url("7547.jpg");background-color:var(--warm-white);background-blend-mode:multiply;background-size:400px 400px;}
-.bg-sky{background-image:url("7547.jpg");background-color:var(--blue-sky);background-blend-mode:multiply;background-size:400px 400px;}
-.bg-green-pale{background-image:url("7547.jpg");background-color:var(--green-pale);background-blend-mode:multiply;background-size:400px 400px;}
+.grain-layer{
+  position:absolute;
+  left:0;right:0;bottom:0;
+  pointer-events:none;
+  z-index:0;
+  background-image:url("7547.jpg");
+  background-size:400px 400px;
+  opacity:0.30;
+  mix-blend-mode:linear-burn;
+}
 
 /* scroll fade-in */
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
@@ -823,6 +829,9 @@ footer.footer .footer-inner{position:relative;z-index:2;}
 </div>
 </div>
 
+<!-- grain starts here -->
+<div style="position:relative;">
+<div class="grain-layer"></div>
 <!-- wave stats→services -->
 <svg class="wave" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
   <path d="M0,40 C280,5 600,55 900,22 C1100,5 1300,46 1440,28 L1440,55 L0,55Z" fill="#D9EFFF"/>
@@ -863,7 +872,7 @@ footer.footer .footer-inner{position:relative;z-index:2;}
 </section>
 
 <!-- wave services→why -->
-<svg class="wave" style="background-image:url('7547.jpg');background-size:400px 400px;background-blend-mode:multiply;" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
+<svg class="wave" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
   <path d="M0,26 C350,55 700,0 1050,34 C1250,52 1380,12 1440,22 L1440,55 L0,55Z" fill="#FFFDF8"/>
 </svg>
 
@@ -890,7 +899,7 @@ footer.footer .footer-inner{position:relative;z-index:2;}
 </section>
 
 <!-- wave why→schedule -->
-<svg class="wave" style="background-image:url('7547.jpg');background-size:400px 400px;background-blend-mode:multiply;" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
+<svg class="wave" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
   <path d="M0,20 C300,55 650,0 950,36 C1150,58 1350,8 1440,26 L1440,55 L0,55Z" fill="#E2F5EC"/>
 </svg>
 
@@ -940,7 +949,7 @@ footer.footer .footer-inner{position:relative;z-index:2;}
 </section>
 
 <!-- wave schedule→gallery -->
-<svg class="wave" style="background-image:url('7547.jpg');background-size:400px 400px;background-blend-mode:multiply;" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
+<svg class="wave" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
   <path d="M0,35 C400,5 800,55 1200,22 C1340,8 1410,40 1440,32 L1440,55 L0,55Z" fill="#D9EFFF"/>
 </svg>
 
@@ -984,7 +993,7 @@ footer.footer .footer-inner{position:relative;z-index:2;}
 </section>
 
 <!-- wave gallery→testimonials -->
-<svg class="wave" style="background-image:url('7547.jpg');background-size:400px 400px;background-blend-mode:multiply;" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
+<svg class="wave" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
   <path d="M0,18 C250,55 600,0 900,34 C1100,55 1350,10 1440,24 L1440,55 L0,55Z" fill="#C8E6FA"/>
 </svg>
 
@@ -1007,7 +1016,7 @@ footer.footer .footer-inner{position:relative;z-index:2;}
 </section>
 
 <!-- wave testimonials→news -->
-<svg class="wave" style="background-image:url('7547.jpg');background-size:400px 400px;background-blend-mode:multiply;" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
+<svg class="wave" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
   <path d="M0,30 C300,5 700,55 1100,18 C1300,4 1400,40 1440,30 L1440,55 L0,55Z" fill="#FFFDF8"/>
 </svg>
 
@@ -1133,6 +1142,7 @@ footer.footer .footer-inner{position:relative;z-index:2;}
   </div></div>
 </section>
 
+</div><!-- end grain -->
 <!-- wave contact→footer -->
 <svg class="wave" viewBox="0 0 1440 44" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
   <path d="M0,20 C300,44 700,0 1100,30 C1300,42 1420,10 1440,18 L1440,46 L0,46Z" fill="#0D3D6E"/>
