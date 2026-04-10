@@ -724,6 +724,18 @@ footer.footer .footer-inner{position:relative;z-index:2;}
   mix-blend-mode:linear-burn;
 }
 
+
+/* Content above grain */
+.nav, .hero, .stats, .section-inner, .gallery-inner, .gallery-header,
+.gallery-track, .footer-inner, section#cennik .section-inner,
+.news-popup-overlay, .gallery-popup-overlay, .lightbox,
+img, button, a, .btn, .news-card, .service-card, .testi-card,
+.why-item, .price-card, .contact-card, .z-item, .tl-item,
+.hero-content, .hero-news-blob, .about-teaser, .about-text {
+  position:relative;
+  z-index:10000;
+}
+
 /* scroll fade-in */
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
 .fade-in.visible{opacity:1;transform:translateY(0);}
