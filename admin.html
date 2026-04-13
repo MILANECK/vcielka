@@ -171,6 +171,10 @@ body{font-family:'Inter',sans-serif;background:#F0F7FF;color:#1a1a1a;min-height:
       <span class="icon">📄</span> Na stiahnutie
     </div>
     <div class="nav-divider"></div>
+    <div class="nav-item" onclick="showPage('skolka')" id="nav-skolka">
+      <span class="icon">📸</span> Virtuálna Školka
+    </div>
+    <div class="nav-divider"></div>
     <button class="logout-btn" onclick="doLogout()"><span>🚪</span> Odhlásiť sa</button>
   </div>
 
@@ -353,6 +357,44 @@ body{font-family:'Inter',sans-serif;background:#F0F7FF;color:#1a1a1a;min-height:
       </div>
     </div>
 
+
+    <!-- VIRTUÁLNA ŠKOLKA -->
+    <div class="section-page" id="page-skolka">
+      <div class="page-title">📸 Virtuálna Školka</div>
+      <div class="page-sub">Spravujte priečinky a fotografie pre editor foto rámčekov</div>
+
+      <!-- Create folder -->
+      <div class="card" style="background:#F0F7FF;margin-bottom:24px;">
+        <div class="card-title">➕ Nový priečinok</div>
+        <div style="display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;">
+          <div class="field" style="flex:1;min-width:180px;margin-bottom:0;">
+            <label>Názov priečinka</label>
+            <input type="text" id="skolka_new_folder" placeholder="napr. Trieda Mackov · Jar 2025" onkeydown="if(event.key==='Enter')createSkolkaFolder()"/>
+          </div>
+          <button class="btn-save" onclick="createSkolkaFolder()" style="margin-bottom:0;">📁 Vytvoriť priečinok</button>
+        </div>
+      </div>
+
+      <!-- Folders list -->
+      <div id="skolka_folders_list">
+        <div style="color:#888;font-size:13px;padding:20px;">Načítavam priečinky…</div>
+      </div>
+    </div>
+
+    <!-- SKOLKA photo upload modal (fullscreen) -->
+    <div id="skolka_upload_modal" style="display:none;position:fixed;inset:0;background:rgba(0,20,50,.7);z-index:2000;align-items:center;justify-content:center;">
+      <div style="background:#fff;border-radius:24px;padding:28px;width:90%;max-width:640px;max-height:88vh;display:flex;flex-direction:column;gap:14px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div style="font-family:'Quicksand',sans-serif;font-weight:700;font-size:16px;" id="skolka_modal_title">Nahrať fotografie</div>
+          <button onclick="closeSkolkaModal()" style="background:none;border:none;font-size:20px;cursor:pointer;color:#888;">✕</button>
+        </div>
+        <label style="display:inline-flex;align-items:center;gap:10px;background:#F9C832;color:#1a1a1a;font-family:'Quicksand',sans-serif;font-size:13px;font-weight:700;padding:12px 24px;border-radius:50px;cursor:pointer;width:fit-content;">
+          <input type="file" accept="image/*" multiple style="display:none;" id="skolka_photo_input" onchange="uploadSkolkaPhotos(this)"/>
+          📷 Vybrať fotografie zo zariadenia
+        </label>
+        <div id="skolka_modal_grid" class="gallery-grid" style="overflow-y:auto;flex:1;"></div>
+      </div>
+    </div>
   </div><!-- /main -->
 </div><!-- /app -->
 
@@ -407,6 +449,7 @@ function initApp() {
 }
 
 async function loadPage(name) {
+  if (name === 'skolka') { loadSkolka(); return; }
   if (name === 'hero') await loadSettings(['hero_title','hero_subtitle','hero_photo']);
   if (name === 'contact') await loadSettings(['contact_address','contact_phone','contact_email','contact_hours']);
   if (name === 'pricing') await loadSettings(['price_full_amount','price_full_detail','price_half_amount','price_half_detail']);
@@ -854,6 +897,144 @@ async function deleteDocument(id, url) {
   await db.from('documents').delete().eq('id', id);
   toast('Dokument vymazaný');
   loadDocuments();
+}
+
+
+// ===== VIRTUÁLNA ŠKOLKA =====
+let currentSkolkaFolderId = null;
+
+async function loadSkolka() {
+  const list = document.getElementById('skolka_folders_list');
+  list.innerHTML = '<div style="color:#888;font-size:13px;padding:20px;">Načítavam…</div>';
+  const { data: folders, error } = await db.from('skolka_folders').select('*').order('created_at', { ascending: false });
+  if (error || !folders?.length) {
+    list.innerHTML = '<div style="color:#888;font-size:13px;padding:20px;">Žiadne priečinky. Vytvorte prvý priečinok vyššie.</div>';
+    return;
+  }
+  list.innerHTML = '';
+  for (const f of folders) {
+    // count photos
+    const { data: files } = await db.storage.from('vcielka').list('skolka/' + f.id, { limit: 100 });
+    const count = (files || []).filter(x => x.name !== '.keep').length;
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.style.marginBottom = '16px';
+    card.innerHTML = `
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:14px;">
+        <div>
+          <div style="font-family:'Quicksand',sans-serif;font-weight:700;font-size:15px;">📁 ${f.name}</div>
+          <div style="font-size:12px;color:#888;margin-top:2px;">${count} fotografi${count===1?'a':'í'}</div>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button class="btn-add" onclick="openSkolkaFolder('${f.id}','${f.name.replace(/'/g,"\'")}')">📷 Nahrať fotografie</button>
+          <button class="btn-danger" onclick="deleteSkolkaFolder('${f.id}','${f.name.replace(/'/g,"\'")}')">🗑️ Vymazať priečinok</button>
+        </div>
+      </div>
+      <div class="gallery-grid" id="skolka_grid_${f.id}" style="margin-top:4px;"></div>
+    `;
+    list.appendChild(card);
+    renderSkolkaGrid(f.id, files || []);
+  }
+}
+
+function renderSkolkaGrid(folderId, files) {
+  const grid = document.getElementById('skolka_grid_' + folderId);
+  if (!grid) return;
+  const photos = files.filter(x => x.name !== '.keep');
+  if (!photos.length) {
+    grid.innerHTML = '<div style="color:#aaa;font-size:12px;padding:8px 0;">Žiadne fotografie</div>';
+    return;
+  }
+  grid.innerHTML = photos.map(p => {
+    const { data: { publicUrl } } = db.storage.from('vcielka').getPublicUrl('skolka/' + folderId + '/' + p.name);
+    return `
+      <div class="gallery-item">
+        <img src="${publicUrl}" alt="${p.name}" loading="lazy"/>
+        <button class="gallery-item-del" onclick="deleteSkolkaPhoto('${folderId}','${p.name}')">✕</button>
+      </div>`;
+  }).join('');
+}
+
+async function createSkolkaFolder() {
+  const name = document.getElementById('skolka_new_folder').value.trim();
+  if (!name) { toast('Zadajte názov priečinka', 'error'); return; }
+  const { data, error } = await db.from('skolka_folders').insert({ name }).select().single();
+  if (error) { toast('Chyba: ' + error.message, 'error'); return; }
+  // create .keep placeholder so folder "exists" in storage
+  await db.storage.from('vcielka').upload('skolka/' + data.id + '/.keep', new Blob(['']));
+  document.getElementById('skolka_new_folder').value = '';
+  toast('✅ Priečinok vytvorený!');
+  loadSkolka();
+}
+
+function openSkolkaFolder(folderId, folderName) {
+  currentSkolkaFolderId = folderId;
+  document.getElementById('skolka_modal_title').textContent = '📁 ' + folderName + ' — nahrať fotografie';
+  document.getElementById('skolka_modal_grid').innerHTML = '';
+  const modal = document.getElementById('skolka_upload_modal');
+  modal.style.display = 'flex';
+}
+
+function closeSkolkaModal() {
+  document.getElementById('skolka_upload_modal').style.display = 'none';
+  currentSkolkaFolderId = null;
+  loadSkolka();
+}
+
+async function uploadSkolkaPhotos(input) {
+  if (!currentSkolkaFolderId) return;
+  const files = Array.from(input.files);
+  if (!files.length) return;
+  toast('Nahrávam ' + files.length + ' fotografi…');
+  let ok = 0;
+  for (const file of files) {
+    const path = 'skolka/' + currentSkolkaFolderId + '/' + Date.now() + '_' + file.name.replace(/[^a-zA-Z0-9._-]/g,'_');
+    const { error } = await db.storage.from('vcielka').upload(path, file, { upsert: true });
+    if (!error) ok++;
+  }
+  input.value = '';
+  toast('✅ ' + ok + ' fotografi nahratých!');
+  // refresh modal grid
+  const { data: files2 } = await db.storage.from('vcielka').list('skolka/' + currentSkolkaFolderId, { limit: 200 });
+  const grid = document.getElementById('skolka_modal_grid');
+  const photos = (files2 || []).filter(x => x.name !== '.keep');
+  grid.innerHTML = photos.map(p => {
+    const { data: { publicUrl } } = db.storage.from('vcielka').getPublicUrl('skolka/' + currentSkolkaFolderId + '/' + p.name);
+    return `<div class="gallery-item"><img src="${publicUrl}" alt="${p.name}" loading="lazy"/><button class="gallery-item-del" onclick="deleteSkolkaPhotoModal('${p.name}')">✕</button></div>`;
+  }).join('');
+}
+
+async function deleteSkolkaPhoto(folderId, fileName) {
+  if (!confirm('Vymazať fotografiu?')) return;
+  await db.storage.from('vcielka').remove(['skolka/' + folderId + '/' + fileName]);
+  toast('Fotografia vymazaná');
+  loadSkolka();
+}
+
+async function deleteSkolkaPhotoModal(fileName) {
+  if (!currentSkolkaFolderId) return;
+  await db.storage.from('vcielka').remove(['skolka/' + currentSkolkaFolderId + '/' + fileName]);
+  toast('Fotografia vymazaná');
+  const { data: files } = await db.storage.from('vcielka').list('skolka/' + currentSkolkaFolderId, { limit: 200 });
+  const grid = document.getElementById('skolka_modal_grid');
+  const photos = (files || []).filter(x => x.name !== '.keep');
+  grid.innerHTML = photos.map(p => {
+    const { data: { publicUrl } } = db.storage.from('vcielka').getPublicUrl('skolka/' + currentSkolkaFolderId + '/' + p.name);
+    return `<div class="gallery-item"><img src="${publicUrl}" alt="${p.name}" loading="lazy"/><button class="gallery-item-del" onclick="deleteSkolkaPhotoModal('${p.name}')">✕</button></div>`;
+  }).join('');
+}
+
+async function deleteSkolkaFolder(folderId, folderName) {
+  if (!confirm('Vymazať celý priečinok "' + folderName + '" aj so všetkými fotografiami?')) return;
+  // list and delete all files
+  const { data: files } = await db.storage.from('vcielka').list('skolka/' + folderId, { limit: 500 });
+  if (files?.length) {
+    const paths = files.map(f => 'skolka/' + folderId + '/' + f.name);
+    await db.storage.from('vcielka').remove(paths);
+  }
+  await db.from('skolka_folders').delete().eq('id', folderId);
+  toast('Priečinok vymazaný');
+  loadSkolka();
 }
 
 // ===== BOOT =====
